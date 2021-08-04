@@ -148,7 +148,7 @@ sws-drawer-close-button {
 ### sws-drawer
 
 | option name  | content                                               | defaults               |
-|:-------------|:------------------------------------------------------|:------------=----------|
+|:-------------|:------------------------------------------------------|:-----------------------|
 | `status-key` | Change active status attribute name of root element.  | `is-sws-drawer-active` |
 
 ### sws-drawer-toggle-button
