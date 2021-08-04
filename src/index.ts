@@ -96,18 +96,14 @@ class SwsDrawer extends LitElement {
     const elRoot = document.documentElement;
 
     this.observer = new MutationObserver((mutaions) => {
-      const statusMutations = mutaions.filter((record) => {
-        return record.attributeName === this.statusKey;
-      });
+      const statusMutations = mutaions.filter((record) => record.attributeName === this.statusKey);
       if (statusMutations.length === 1) {
         const mutaion = statusMutations[0];
-        if (mutaion.attributeName === this.statusKey) {
-          this.isActive = mutaion.oldValue !== 'true';
-          if (this.isActive) {
-            this.elDrawer?.setAttribute('is-active', String(this.isActive));
-          } else {
-            this.elDrawer?.removeAttribute('is-active');
-          }
+        this.isActive = mutaion.oldValue !== 'true';
+        if (this.isActive) {
+          this.elDrawer?.setAttribute('is-active', String(this.isActive));
+        } else {
+          this.elDrawer?.removeAttribute('is-active');
         }
       }
     });
