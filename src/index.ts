@@ -15,6 +15,8 @@ class SwsDrawer extends LitElement {
       --sws-drawer-left: 0;
       --sws-drawer-z-index: 1000;
       --sws-drawer-width: 80%;
+      --sws-drawer-main-top: 0;
+      --sws-drawer-main-bottom: 0;
       --sws-drawer-main-left: calc(100% - var(--sws-drawer-width));
       --sws-drawer-main-overflow-x: visible;
       --sws-drawer-main-overflow-y: auto;
@@ -67,8 +69,8 @@ class SwsDrawer extends LitElement {
       overflow-x: var(--sws-drawer-main-overflow-x);
       overflow-y: var(--sws-drawer-main-overflow-y);
       position: absolute;
-      top: 0;
-      bottom: 0;
+      top: var(--sws-drawer-main-top);
+      bottom: var(--sws-drawer-main-bottom);
       left: var(--sws-drawer-main-left);
       width: var(--sws-drawer-width);
       color: var(--sws-drawer-color);

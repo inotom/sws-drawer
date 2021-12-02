@@ -38,6 +38,8 @@ sws-drawer {
   --sws-drawer-left: 0;
   --sws-drawer-z-index: 1000;
   --sws-drawer-width: 80%;
+  --sws-drawer-main-top: 0;
+  --sws-drawer-main-bottom: 0;
   --sws-drawer-main-left: calc(100% - var(--sws-drawer-width));
   --sws-drawer-main-overflow-x: visible;
   --sws-drawer-main-overflow-y: auto;
@@ -75,26 +77,28 @@ sws-drawer-close-button {
 
 ### sws-drawer
 
-| css custom property name             | content                                 |  defaults                              |
-|:-------------------------------------|:----------------------------------------|:---------------------------------------|
-| `--sws-drawer-position`              | Position property                       | `fixed`                                |
-| `--sws-drawer-top`                   | Position top property                   | `0`                                    |
-| `--sws-drawer-right`                 | Position right property                 | `0`                                    |
-| `--sws-drawer-bottom`                | Position bottom property                | `0`                                    |
-| `--sws-drawer-left`                  | Position left property                  | `0`                                    |
-| `--sws-drawer-z-index`               | Position z-index property               | `1000`                                 |
-| `--sws-drawer-width`                 | Width property                          | `80%`                                  |
-| `--sws-drawer-main-left`             | Content element position left property  | `calc(100% - var(--sws-drawer-width))` |
-| `--sws-drawer-main-overflow-x`       | Content element overflow-x property     | `visible`                              |
-| `--sws-drawer-main-overflow-y`       | Content element overflow-y property     | `auto`                                 |
-| `--sws-drawer-box-shadow`            | Content element box-shadow  property    | `-2px 0 4px rgba(0, 0, 0, 0.2)`        |
-| `--sws-drawer-color`                 | Content element color property          | `currentColor`                         |
-| `--sws-drawer-background`            | Content element background property     | `#fff`                                 |
-| `--sws-drawer-layer-color`           | Background layer color property         | `currentColor`                         |
-| `--sws-drawer-layer-background`      | Background layer background property    | `rgba(0, 0, 0, 0.5)`                   |
-| `--sws-drawer-layer-backdrop-filter` | Background layer blur size property     | `blur(5px)`                            |
-| `--sws-drawer-animation-speed`       | Animation speed property                | `0.3s`                                 |
-| `--sws-drawer-translate`             | Drawer initial translated property      | `translate3d(100%, 0, 0)`              |
+| css custom property name             | content                                   |  defaults                              |
+|:-------------------------------------|:------------------------------------------|:---------------------------------------|
+| `--sws-drawer-position`              | Position property                         | `fixed`                                |
+| `--sws-drawer-top`                   | Position top property                     | `0`                                    |
+| `--sws-drawer-right`                 | Position right property                   | `0`                                    |
+| `--sws-drawer-bottom`                | Position bottom property                  | `0`                                    |
+| `--sws-drawer-left`                  | Position left property                    | `0`                                    |
+| `--sws-drawer-z-index`               | Position z-index property                 | `1000`                                 |
+| `--sws-drawer-width`                 | Width property                            | `80%`                                  |
+| `--sws-drawer-main-top`              | Content element position top property     | `0`                                    |
+| `--sws-drawer-main-bottom`           | Content element position bottom property  | `0`                                    |
+| `--sws-drawer-main-left`             | Content element position left property    | `calc(100% - var(--sws-drawer-width))` |
+| `--sws-drawer-main-overflow-x`       | Content element overflow-x property       | `visible`                              |
+| `--sws-drawer-main-overflow-y`       | Content element overflow-y property       | `auto`                                 |
+| `--sws-drawer-box-shadow`            | Content element box-shadow  property      | `-2px 0 4px rgba(0, 0, 0, 0.2)`        |
+| `--sws-drawer-color`                 | Content element color property            | `currentColor`                         |
+| `--sws-drawer-background`            | Content element background property       | `#fff`                                 |
+| `--sws-drawer-layer-color`           | Background layer color property           | `currentColor`                         |
+| `--sws-drawer-layer-background`      | Background layer background property      | `rgba(0, 0, 0, 0.5)`                   |
+| `--sws-drawer-layer-backdrop-filter` | Background layer blur size property       | `blur(5px)`                            |
+| `--sws-drawer-animation-speed`       | Animation speed property                  | `0.3s`                                 |
+| `--sws-drawer-translate`             | Drawer initial translated property        | `translate3d(100%, 0, 0)`              |
 
 ### sws-drawer-toggle-button
 
