@@ -1,6 +1,7 @@
 /** @prettier */
 
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, css } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
 const DEFAULT_STATUS_KEY = 'is-sws-drawer-active';
 
