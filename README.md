@@ -43,6 +43,7 @@ sws-drawer {
   --sws-drawer-main-left: calc(100% - var(--sws-drawer-width));
   --sws-drawer-main-overflow-x: visible;
   --sws-drawer-main-overflow-y: auto;
+  --sws-drawer-main-overscroll-behavior: contain;
   --sws-drawer-box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
   --sws-drawer-color: currentColor;
   --sws-drawer-background: #fff;
@@ -77,28 +78,29 @@ sws-drawer-close-button {
 
 ### sws-drawer
 
-| css custom property name             | content                                   |  defaults                              |
-|:-------------------------------------|:------------------------------------------|:---------------------------------------|
-| `--sws-drawer-position`              | Position property                         | `fixed`                                |
-| `--sws-drawer-top`                   | Position top property                     | `0`                                    |
-| `--sws-drawer-right`                 | Position right property                   | `0`                                    |
-| `--sws-drawer-bottom`                | Position bottom property                  | `0`                                    |
-| `--sws-drawer-left`                  | Position left property                    | `0`                                    |
-| `--sws-drawer-z-index`               | Position z-index property                 | `1000`                                 |
-| `--sws-drawer-width`                 | Width property                            | `80%`                                  |
-| `--sws-drawer-main-top`              | Content element position top property     | `0`                                    |
-| `--sws-drawer-main-bottom`           | Content element position bottom property  | `0`                                    |
-| `--sws-drawer-main-left`             | Content element position left property    | `calc(100% - var(--sws-drawer-width))` |
-| `--sws-drawer-main-overflow-x`       | Content element overflow-x property       | `visible`                              |
-| `--sws-drawer-main-overflow-y`       | Content element overflow-y property       | `auto`                                 |
-| `--sws-drawer-box-shadow`            | Content element box-shadow  property      | `-2px 0 4px rgba(0, 0, 0, 0.2)`        |
-| `--sws-drawer-color`                 | Content element color property            | `currentColor`                         |
-| `--sws-drawer-background`            | Content element background property       | `#fff`                                 |
-| `--sws-drawer-layer-color`           | Background layer color property           | `currentColor`                         |
-| `--sws-drawer-layer-background`      | Background layer background property      | `rgba(0, 0, 0, 0.5)`                   |
-| `--sws-drawer-layer-backdrop-filter` | Background layer blur size property       | `blur(5px)`                            |
-| `--sws-drawer-animation-speed`       | Animation speed property                  | `0.3s`                                 |
-| `--sws-drawer-translate`             | Drawer initial translated property        | `translate3d(100%, 0, 0)`              |
+| css custom property name                | content                                      |  defaults                              |
+|:----------------------------------------|:---------------------------------------------|:---------------------------------------|
+| `--sws-drawer-position`                 | Position property                            | `fixed`                                |
+| `--sws-drawer-top`                      | Position top property                        | `0`                                    |
+| `--sws-drawer-right`                    | Position right property                      | `0`                                    |
+| `--sws-drawer-bottom`                   | Position bottom property                     | `0`                                    |
+| `--sws-drawer-left`                     | Position left property                       | `0`                                    |
+| `--sws-drawer-z-index`                  | Position z-index property                    | `1000`                                 |
+| `--sws-drawer-width`                    | Width property                               | `80%`                                  |
+| `--sws-drawer-main-top`                 | Content element position top property        | `0`                                    |
+| `--sws-drawer-main-bottom`              | Content element position bottom property     | `0`                                    |
+| `--sws-drawer-main-left`                | Content element position left property       | `calc(100% - var(--sws-drawer-width))` |
+| `--sws-drawer-main-overflow-x`          | Content element overflow-x property          | `visible`                              |
+| `--sws-drawer-main-overflow-y`          | Content element overflow-y property          | `auto`                                 |
+| `--sws-drawer-main-overscroll-behavior` | Content element overscroll-behavior property | `contain`                              |
+| `--sws-drawer-box-shadow`               | Content element box-shadow  property         | `-2px 0 4px rgba(0, 0, 0, 0.2)`        |
+| `--sws-drawer-color`                    | Content element color property               | `currentColor`                         |
+| `--sws-drawer-background`               | Content element background property          | `#fff`                                 |
+| `--sws-drawer-layer-color`              | Background layer color property              | `currentColor`                         |
+| `--sws-drawer-layer-background`         | Background layer background property         | `rgba(0, 0, 0, 0.5)`                   |
+| `--sws-drawer-layer-backdrop-filter`    | Background layer blur size property          | `blur(5px)`                            |
+| `--sws-drawer-animation-speed`          | Animation speed property                     | `0.3s`                                 |
+| `--sws-drawer-translate`                | Drawer initial translated property           | `translate3d(100%, 0, 0)`              |
 
 ### sws-drawer-toggle-button
 
@@ -128,6 +130,7 @@ sws-drawer-close-button {
 ```html
 <sws-drawer-toggle-button
   status-key="is-sws-drawer-active"
+  body-top-key=""
   x-tabindex="0"
   group-keys="['is-sws-drawer-active', 'is-sws-drawer-active-other']"
 >
@@ -136,9 +139,11 @@ sws-drawer-close-button {
 
 <sws-drawer
   status-key="is-sws-drawer-active"
+  body-top-key=""
 >
   <sws-drawer-close-button
     status-key="is-sws-drawer-active"
+    body-top-key=""
     x-tabindex="0"
   >
   Close Button
@@ -149,26 +154,32 @@ sws-drawer-close-button {
 </sws-drawer>
 ```
 
+If the `body-top-key` property is not set, the position top of the body tag will not change.
+
+
 ### sws-drawer
 
-| option name  | content                                               | defaults               |
-|:-------------|:------------------------------------------------------|:-----------------------|
-| `status-key` | Change active status attribute name of root element.  | `is-sws-drawer-active` |
+| option name    | content                                                                                        | defaults               |
+|:---------------|:-----------------------------------------------------------------------------------------------|:-----------------------|
+| `status-key`   | Change active status attribute name of root element.                                           | `is-sws-drawer-active` |
+| `body-top-key` | Change the position top of the body tag on browsers that do not support `overscroll-behavior`. | ``                     |
 
 ### sws-drawer-toggle-button
 
-| option name  | content                                                                  | defaults               |
-|:-------------|:-------------------------------------------------------------------------|:-----------------------|
-| `status-key` | Change active status attribute name of root element.                     | `is-sws-drawer-active` |
-| `x-tabindex` | Button element tabindex attribute value.                                 | `0`                    |
-| `group-keys` | Array of `status-key` string. Limit the number of active Drawers to one. | `[]`                   |
+| option name    | content                                                                                        | defaults               |
+|:---------------|:-----------------------------------------------------------------------------------------------|:-----------------------|
+| `status-key`   | Change active status attribute name of root element.                                           | `is-sws-drawer-active` |
+| `body-top-key` | Change the position top of the body tag on browsers that do not support `overscroll-behavior`. | ``                     |
+| `x-tabindex`   | Button element tabindex attribute value.                                                       | `0`                    |
+| `group-keys`   | Array of `status-key` string. Limit the number of active Drawers to one.                       | `[]`                   |
 
 ### sws-drawer-close-button
 
-| option name  | content                                               | defaults               |
-|:-------------|:------------------------------------------------------|:-----------------------|
-| `status-key` | Change active status attribute name of root element.  | `is-sws-drawer-active` |
-| `x-tabindex` | Button element tabindex attribute value.              | `0`                    |
+| option name    | content                                                                                        | defaults               |
+|:---------------|:-----------------------------------------------------------------------------------------------|:-----------------------|
+| `status-key`   | Change active status attribute name of root element.                                           | `is-sws-drawer-active` |
+| `body-top-key` | Change the position top of the body tag on browsers that do not support `overscroll-behavior`. | ``                     |
+| `x-tabindex`   | Button element tabindex attribute value.                                                       | `0`                    |
 
 
 ## License

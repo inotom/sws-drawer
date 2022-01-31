@@ -5,6 +5,37 @@ import { customElement, property } from 'lit/decorators.js';
 
 const DEFAULT_STATUS_KEY = 'is-sws-drawer-active';
 
+const IS_SUPPORTS_OVERSCROLL_BEHAVIOR = (() => CSS.supports('overscroll-behavior', 'none'))();
+
+const stopBodyScrolling = (e) => {
+  e.preventDefault();
+};
+
+const fixBodyTop = (key: string): void => {
+  if (IS_SUPPORTS_OVERSCROLL_BEHAVIOR) {
+    return;
+  }
+  if (key === '') {
+    return;
+  }
+  const top = `${window.pageYOffset}`;
+  document.documentElement.setAttribute(key, top);
+  document.body.style.top = -top + 'px';
+};
+
+const recoverBodyTop = (key: string): void => {
+  if (IS_SUPPORTS_OVERSCROLL_BEHAVIOR) {
+    return;
+  }
+  if (key === '') {
+    return;
+  }
+  const top = document.documentElement.getAttribute(key) || '0';
+  window.scrollTo(0, +top);
+  document.body.style.top = 'initial';
+  document.documentElement.setAttribute(key, '0');
+};
+
 @customElement('sws-drawer')
 class SwsDrawer extends LitElement {
   static styles = css`
@@ -21,6 +52,7 @@ class SwsDrawer extends LitElement {
       --sws-drawer-main-left: calc(100% - var(--sws-drawer-width));
       --sws-drawer-main-overflow-x: visible;
       --sws-drawer-main-overflow-y: auto;
+      --sws-drawer-main-overscroll-behavior: contain;
       --sws-drawer-box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
       --sws-drawer-color: currentColor;
       --sws-drawer-background: #fff;
@@ -79,6 +111,7 @@ class SwsDrawer extends LitElement {
       box-shadow: var(--sws-drawer-box-shadow);
       transform: var(--sws-drawer-translate);
       transition: transform var(--sws-drawer-animation-speed);
+      overscroll-behavior: var(--sws-drawer-main-overscroll-behavior);
     }
 
     .drawer[is-active='true'] .drawer__main {
@@ -88,6 +121,9 @@ class SwsDrawer extends LitElement {
 
   @property({ type: String, attribute: 'status-key' })
   statusKey = DEFAULT_STATUS_KEY;
+
+  @property({ type: String, attribute: 'body-top-key' })
+  bodyTopKey = '';
 
   private elDrawer: HTMLDivElement | null | undefined;
   private observer: MutationObserver;
@@ -105,8 +141,14 @@ class SwsDrawer extends LitElement {
         this.isActive = mutaion.oldValue !== 'true';
         if (this.isActive) {
           this.elDrawer?.setAttribute('is-active', String(this.isActive));
+          if (!IS_SUPPORTS_OVERSCROLL_BEHAVIOR) {
+            document.body.addEventListener('touchmove', stopBodyScrolling);
+          }
         } else {
           this.elDrawer?.removeAttribute('is-active');
+          if (!IS_SUPPORTS_OVERSCROLL_BEHAVIOR) {
+            document.body.removeEventListener('touchmove', stopBodyScrolling);
+          }
         }
       }
     });
@@ -151,6 +193,7 @@ class SwsDrawer extends LitElement {
     const elRoot = document.documentElement;
     if (elRoot.hasAttribute(this.statusKey)) {
       elRoot.removeAttribute(this.statusKey);
+      recoverBodyTop(this.bodyTopKey);
     }
   }
 
@@ -197,6 +240,9 @@ class SwsDrawerToggleButton extends LitElement {
   @property({ type: String, attribute: 'status-key' })
   statusKey = DEFAULT_STATUS_KEY;
 
+  @property({ type: String, attribute: 'body-top-key' })
+  bodyTopKey = '';
+
   @property({ type: Number, attribute: 'x-tabindex' })
   xTabindex = 0;
 
@@ -226,12 +272,14 @@ class SwsDrawerToggleButton extends LitElement {
     const elRoot = document.documentElement;
     if (elRoot.hasAttribute(this.statusKey)) {
       elRoot.removeAttribute(this.statusKey);
+      recoverBodyTop(this.bodyTopKey);
     } else {
       this.groupKeys
         .filter((key) => key !== this.statusKey)
         .forEach((key) => {
           elRoot.removeAttribute(key);
         });
+      fixBodyTop(this.bodyTopKey);
       elRoot.setAttribute(this.statusKey, 'true');
     }
   }
@@ -262,6 +310,9 @@ class SwsDrawerCloseButton extends LitElement {
   @property({ type: String, attribute: 'status-key' })
   statusKey = DEFAULT_STATUS_KEY;
 
+  @property({ type: String, attribute: 'body-top-key' })
+  bodyTopKey = '';
+
   @property({ type: Number, attribute: 'x-tabindex' })
   xTabindex = 0;
 
@@ -287,6 +338,9 @@ class SwsDrawerCloseButton extends LitElement {
   private _onClick(e: MouseEvent): void {
     const elRoot = document.documentElement;
     if (elRoot.hasAttribute(this.statusKey)) {
+      if (!IS_SUPPORTS_OVERSCROLL_BEHAVIOR) {
+        recoverBodyTop(this.bodyTopKey);
+      }
       elRoot.removeAttribute(this.statusKey);
     }
   }
