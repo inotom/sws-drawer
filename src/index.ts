@@ -131,7 +131,11 @@ class SwsDrawer extends LitElement {
   render() {
     return html`
       <div class="drawer">
-        <div class="drawer__layer" @click="${this._onClick}"></div>
+        <div
+          class="drawer__layer"
+          @click="${this._onClick}"
+          @touchmove="${this._onTouchMove}"
+        ></div>
         <div class="drawer__main">
           <slot />
         </div>
@@ -153,6 +157,11 @@ class SwsDrawer extends LitElement {
   private _onClick(e: MouseEvent): void {
     e.stopPropagation();
     this._close();
+  }
+
+  private _onTouchMove(e: TouchEvent): void {
+    // To prevent scrolling of the <body> in iOS Safari.
+    e.preventDefault();
   }
 
   private _escapeKeyUp(e: KeyboardEvent): void {
