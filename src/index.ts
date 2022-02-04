@@ -47,6 +47,8 @@ class SwsDrawer extends LitElement {
       --sws-drawer-left: 0;
       --sws-drawer-z-index: 1000;
       --sws-drawer-width: 80%;
+      --sws-drawer-visibility: hidden;
+      --sws-drawer-main-position: absolute;
       --sws-drawer-main-top: 0;
       --sws-drawer-main-bottom: 0;
       --sws-drawer-main-left: calc(100% - var(--sws-drawer-width));
@@ -71,7 +73,7 @@ class SwsDrawer extends LitElement {
       left: var(--sws-drawer-left);
       z-index: var(--sws-drawer-z-index);
       color: var(--sws-drawer-layer-color);
-      visibility: hidden;
+      visibility: var(--sws-drawer-visibility);
       transition: visibility 0s linear var(--sws-drawer-animation-speed);
     }
 
@@ -101,7 +103,7 @@ class SwsDrawer extends LitElement {
     .drawer__main {
       overflow-x: var(--sws-drawer-main-overflow-x);
       overflow-y: var(--sws-drawer-main-overflow-y);
-      position: absolute;
+      position: var(--sws-drawer-main-position);
       top: var(--sws-drawer-main-top);
       bottom: var(--sws-drawer-main-bottom);
       left: var(--sws-drawer-main-left);

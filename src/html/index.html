@@ -9,12 +9,14 @@
   /* Preventing <body> scrolling in iOS Safari. */
   [is-sws-drawer-active],
   [is-sws-drawer-active-2],
-  [is-sws-drawer-active-3] {
+  [is-sws-drawer-active-3],
+  [is-sws-drawer-active-5] {
     overflow: hidden;
   }
   [is-sws-drawer-active] body,
   [is-sws-drawer-active-2] body,
-  [is-sws-drawer-active-3] body {
+  [is-sws-drawer-active-3] body,
+  [is-sws-drawer-active-5] body {
     position: fixed;
   }
 }
@@ -23,7 +25,8 @@
   /* https://benfrain.com/preventing-body-scroll-for-modals-in-ios/ */
   [is-sws-drawer-active] body,
   [is-sws-drawer-active-2] body,
-  [is-sws-drawer-active-3] body {
+  [is-sws-drawer-active-3] body,
+  [is-sws-drawer-active-5] body {
     touch-action: none;
     -webkit-overflow-scrolling: none;
     overflow: hidden;
@@ -68,6 +71,36 @@ h2 {
   --sws-drawer-top: 100px;
   --sws-drawer-translate: translate3d(0, 100%, 0);
 }
+.drawer-5 sws-drawer {
+  --sws-drawer-position: relative;
+  --sws-drawer-width: 100%;
+  --sws-drawer-visibility: visible;
+  --sws-drawer-main-position: relative;
+  --sws-drawer-box-shadow: 0 0 0 #0000;
+  --sws-drawer-translate: translate3d(0, 0, 0);
+}
+.drawer-5__close-button {
+  display: none;
+}
+.drawer-5-tottle {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .drawer-5 sws-drawer {
+    --sws-drawer-position: fixed;
+    --sws-drawer-width: 80%;
+    --sws-drawer-visibility: hidden;
+    --sws-drawer-main-position: absolute;
+    --sws-drawer-box-shadow: -2px 0 4px #0003;
+    --sws-drawer-translate: translate3d(100%, 0, 0);
+  }
+  .drawer-5__close-button {
+    display: inline;
+  }
+  .drawer-5-tottle {
+    display: inline;
+  }
+}
 </style>
 </head>
 <body id="body">
@@ -92,6 +125,12 @@ h2 {
         <sws-drawer-toggle-button status-key="is-sws-drawer-active-4">
           Toggle 4
         </sws-drawer-toggle-button>
+
+        <div class="drawer-5-toggle">
+          <sws-drawer-toggle-button status-key="is-sws-drawer-active-5">
+            Toggle 5
+          </sws-drawer-toggle-button>
+        </div>
       </nav>
     </div>
   </header>
@@ -262,6 +301,29 @@ h2 {
       </p>
     </sws-drawer>
 
+  </div>
+
+  <div class="l-container">
+    <h2>drawer-5</h2>
+    <div class="drawer-5">
+      <sws-drawer status-key="is-sws-drawer-active-5">
+        <p class="drawer-5__close-button">
+          <sws-drawer-close-button status-key="is-sws-drawer-active-5">
+            Close 5
+          </sws-drawer-close-button>
+        </p>
+        <p>
+          <sws-drawer-close-button status-key="is-sws-drawer-active-5">
+            <a href="#section1">Section 1</a>
+          </sws-drawer-close-button>
+        </p>
+        <p>
+          <sws-drawer-close-button status-key="is-sws-drawer-active-5">
+            <a href="#section2">Section 2</a>
+          </sws-drawer-close-button>
+        </p>
+      </sws-drawer>
+    </div>
   </div>
 
 </body>

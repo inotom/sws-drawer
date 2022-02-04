@@ -38,6 +38,8 @@ sws-drawer {
   --sws-drawer-left: 0;
   --sws-drawer-z-index: 1000;
   --sws-drawer-width: 80%;
+  --sws-drawer-visibility: hidden;
+  --sws-drawer-main-position: absolute;
   --sws-drawer-main-top: 0;
   --sws-drawer-main-bottom: 0;
   --sws-drawer-main-left: calc(100% - var(--sws-drawer-width));
@@ -87,6 +89,8 @@ sws-drawer-close-button {
 | `--sws-drawer-left`                     | Position left property                       | `0`                                    |
 | `--sws-drawer-z-index`                  | Position z-index property                    | `1000`                                 |
 | `--sws-drawer-width`                    | Width property                               | `80%`                                  |
+| `--sws-drawer-visibility`               | Visibility property                          | `hidden`                               |
+| `--sws-drawer-position`                 | Position property                            | `absolute`                             |
 | `--sws-drawer-main-top`                 | Content element position top property        | `0`                                    |
 | `--sws-drawer-main-bottom`              | Content element position bottom property     | `0`                                    |
 | `--sws-drawer-main-left`                | Content element position left property       | `calc(100% - var(--sws-drawer-width))` |
