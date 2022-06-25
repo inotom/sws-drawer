@@ -223,18 +223,22 @@ class SwsDrawerToggleButton extends LitElement {
     :host {
       --sws-drawer-toggle-button-display: inline-block;
       --sws-drawer-toggle-button-appearance: none;
+      --sws-drawer-toggle-button-width: auto;
       --sws-drawer-toggle-padding: 0;
       --sws-drawer-toggle-color: currentColor;
       --sws-drawer-toggle-background: transparent;
+      --sws-drawer-toggle-text-align: center;
       --sws-drawer-toggle-border: 0 none;
     }
 
     .drawer-toggle-button {
       appearance: var(--sws-drawer-toggle-button-appearance);
       display: var(--sws-drawer-toggle-button-display);
+      width: var(--sws-drawer-toggle-button-width);
       padding: var(--sws-drawer-toggle-button-padding);
       color: var(--sws-drawer-toggle-button-color);
       background: var(--sws-drawer-toggle-button-background);
+      text-align: var(--sws-drawer-toggle-text-align);
       border: var(--sws-drawer-toggle-button-border);
     }
   `;
@@ -293,18 +297,22 @@ class SwsDrawerCloseButton extends LitElement {
     :host {
       --sws-drawer-close-button-display: inline-block;
       --sws-drawer-close-button-appearance: none;
+      --sws-drawer-close-button-width: auto;
       --sws-drawer-close-padding: 0;
       --sws-drawer-close-color: currentColor;
       --sws-drawer-close-background: transparent;
+      --sws-drawer-close-text-align: center;
       --sws-drawer-close-border: 0 none;
     }
 
     .drawer-close-button {
       appearance: var(--sws-drawer-close-button-appearance);
       display: var(--sws-drawer-close-button-display);
+      width: var(--sws-drawer-close-button-width);
       padding: var(--sws-drawer-close-button-padding);
       color: var(--sws-drawer-close-button-color);
       background: var(--sws-drawer-close-button-background);
+      text-align: var(--sws-drawer-close-text-align);
       border: var(--sws-drawer-close-button-border);
     }
   `;

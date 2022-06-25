@@ -59,18 +59,22 @@ sws-drawer {
 sws-drawer-toggle-button {
   --sws-drawer-toggle-button-display: inline-block;
   --sws-drawer-toggle-button-appearance: none;
+  --sws-drawer-toggle-button-width: auto;
   --sws-drawer-toggle-padding: 0;
   --sws-drawer-toggle-color: currentColor;
   --sws-drawer-toggle-background: transparent;
+  --sws-drawer-toggle-text-align: center;
   --sws-drawer-toggle-border: 0 none;
 }
 
 sws-drawer-close-button {
   --sws-drawer-close-button-display: inline-block;
   --sws-drawer-close-button-appearance: none;
+  --sws-drawer-close-button-width: auto;
   --sws-drawer-close-padding: 0;
   --sws-drawer-close-color: currentColor;
   --sws-drawer-close-background: transparent;
+  --sws-drawer-close-text-align: center;
   --sws-drawer-close-border: 0 none;
 }
 ```
@@ -108,25 +112,29 @@ sws-drawer-close-button {
 
 ### sws-drawer-toggle-button
 
-| css custom property name                | content                            |  defaults      |
-|:----------------------------------------|:-----------------------------------|:---------------|
-| `--sws-drawer-toggle-button-display`    | Button element display property    | `inline-block` |
-| `--sws-drawer-toggle-button-appearance` | Button element appearance property | `none`         |
-| `--sws-drawer-toggle-padding`           | Button element padding property    | `0`            |
-| `--sws-drawer-toggle-color`             | Button element color property      | `currentColor` |
-| `--sws-drawer-toggle-background`        | Button element background property | `transparent`  |
-| `--sws-drawer-toggle-border`            | Button element border property     | `0 none`       |
+| css custom property name                | content                                |  defaults      |
+|:----------------------------------------|:---------------------------------------|:---------------|
+| `--sws-drawer-toggle-button-display`    | Button element display property        | `inline-block` |
+| `--sws-drawer-toggle-button-appearance` | Button element appearance property     | `none`         |
+| `--sws-drawer-toggle-button-width`      | Button element width property          | `auto`         |
+| `--sws-drawer-toggle-padding`           | Button element padding property        | `0`            |
+| `--sws-drawer-toggle-color`             | Button element color property          | `currentColor` |
+| `--sws-drawer-toggle-background`        | Button element background property     | `transparent`  |
+| `--sws-drawer-toggle-text-align`        | Button element text alignment property | `center`       |
+| `--sws-drawer-toggle-border`            | Button element border property         | `0 none`       |
 
 ### sws-drawer-close-button
 
-| css custom property name               | content                            |  defaults      |
-|:---------------------------------------|:-----------------------------------|:---------------|
-| `--sws-drawer-close-button-display`    | Button element display property    | `inline-block` |
-| `--sws-drawer-close-button-appearance` | Button element appearance property | `none`         |
-| `--sws-drawer-close-padding`           | Button element padding property    | `0`            |
-| `--sws-drawer-close-color`             | Button element color property      | `currentColor` |
-| `--sws-drawer-close-background`        | Button element background property | `transparent`  |
-| `--sws-drawer-close-border`            | Button element border property     | `0 none`       |
+| css custom property name               | content                                |  defaults      |
+|:---------------------------------------|:---------------------------------------|:---------------|
+| `--sws-drawer-close-button-display`    | Button element display property        | `inline-block` |
+| `--sws-drawer-close-button-appearance` | Button element appearance property     | `none`         |
+| `--sws-drawer-close-button-width`      | Button element width property          | `auto`         |
+| `--sws-drawer-close-padding`           | Button element padding property        | `0`            |
+| `--sws-drawer-close-color`             | Button element color property          | `currentColor` |
+| `--sws-drawer-close-background`        | Button element background property     | `transparent`  |
+| `--sws-drawer-close-text-align`        | Button element text alignment property | `center`       |
+| `--sws-drawer-close-border`            | Button element border property         | `0 none`       |
 
 
 ## Options
