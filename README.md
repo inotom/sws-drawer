@@ -66,6 +66,8 @@ sws-drawer-toggle-button {
   --sws-drawer-toggle-button-background: transparent;
   --sws-drawer-toggle-text-align: center;
   --sws-drawer-toggle-button-border: 0 none;
+  --sws-drawer-toggle-button-font-size: inherit;
+  --sws-drawer-toggle-button-font-family: inherit;
 }
 
 sws-drawer-close-button {
@@ -78,6 +80,8 @@ sws-drawer-close-button {
   --sws-drawer-close-button-background: transparent;
   --sws-drawer-close-text-align: center;
   --sws-drawer-close-button-border: 0 none;
+  --sws-drawer-close-button-font-size: inherit;
+  --sws-drawer-close-button-font-family: inherit;
 }
 ```
 
@@ -114,31 +118,35 @@ sws-drawer-close-button {
 
 ### sws-drawer-toggle-button
 
-| css custom property name                | content                                |  defaults      |
-|:----------------------------------------|:---------------------------------------|:---------------|
-| `--sws-drawer-toggle-button-display`    | Button element display property        | `inline-block` |
-| `--sws-drawer-toggle-button-appearance` | Button element appearance property     | `none`         |
-| `--sws-drawer-toggle-button-width`      | Button element width property          | `auto`         |
-| `--sws-drawer-toggle-button-margin`     | Button element margin property         | `0`            |
-| `--sws-drawer-toggle-button-padding`    | Button element padding property        | `0`            |
-| `--sws-drawer-toggle-button-color`      | Button element color property          | `currentColor` |
-| `--sws-drawer-toggle-button-background` | Button element background property     | `transparent`  |
-| `--sws-drawer-toggle-text-align`        | Button element text alignment property | `center`       |
-| `--sws-drawer-toggle-button-border`     | Button element border property         | `0 none`       |
+| css custom property name                 | content                                |  defaults      |
+|:-----------------------------------------|:---------------------------------------|:---------------|
+| `--sws-drawer-toggle-button-display`     | Button element display property        | `inline-block` |
+| `--sws-drawer-toggle-button-appearance`  | Button element appearance property     | `none`         |
+| `--sws-drawer-toggle-button-width`       | Button element width property          | `auto`         |
+| `--sws-drawer-toggle-button-margin`      | Button element margin property         | `0`            |
+| `--sws-drawer-toggle-button-padding`     | Button element padding property        | `0`            |
+| `--sws-drawer-toggle-button-color`       | Button element color property          | `currentColor` |
+| `--sws-drawer-toggle-button-background`  | Button element background property     | `transparent`  |
+| `--sws-drawer-toggle-text-align`         | Button element text alignment property | `center`       |
+| `--sws-drawer-toggle-button-border`      | Button element border property         | `0 none`       |
+| `--sws-drawer-toggle-button-font-size`   | Button element font-size property      | `inherit`      |
+| `--sws-drawer-toggle-button-font-family` | Button element font-family property    | `inherit`      |
 
 ### sws-drawer-close-button
 
-| css custom property name               | content                                |  defaults      |
-|:---------------------------------------|:---------------------------------------|:---------------|
-| `--sws-drawer-close-button-display`    | Button element display property        | `inline-block` |
-| `--sws-drawer-close-button-appearance` | Button element appearance property     | `none`         |
-| `--sws-drawer-close-button-width`      | Button element width property          | `auto`         |
-| `--sws-drawer-close-button-margin`     | Button element margin property         | `0`            |
-| `--sws-drawer-close-button-padding`    | Button element padding property        | `0`            |
-| `--sws-drawer-close-button-color`      | Button element color property          | `currentColor` |
-| `--sws-drawer-close-button-background` | Button element background property     | `transparent`  |
-| `--sws-drawer-close-text-align`        | Button element text alignment property | `center`       |
-| `--sws-drawer-close-button-border`     | Button element border property         | `0 none`       |
+| css custom property name                | content                                |  defaults      |
+|:----------------------------------------|:---------------------------------------|:---------------|
+| `--sws-drawer-close-button-display`     | Button element display property        | `inline-block` |
+| `--sws-drawer-close-button-appearance`  | Button element appearance property     | `none`         |
+| `--sws-drawer-close-button-width`       | Button element width property          | `auto`         |
+| `--sws-drawer-close-button-margin`      | Button element margin property         | `0`            |
+| `--sws-drawer-close-button-padding`     | Button element padding property        | `0`            |
+| `--sws-drawer-close-button-color`       | Button element color property          | `currentColor` |
+| `--sws-drawer-close-button-background`  | Button element background property     | `transparent`  |
+| `--sws-drawer-close-text-align`         | Button element text alignment property | `center`       |
+| `--sws-drawer-close-button-border`      | Button element border property         | `0 none`       |
+| `--sws-drawer-close-button-font-size`   | Button element font-size property      | `inherit`      |
+| `--sws-drawer-close-button-font-family` | Button element font-family property    | `inherit`      |
 
 
 ## Options
