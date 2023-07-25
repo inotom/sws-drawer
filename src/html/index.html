@@ -10,13 +10,15 @@
   [is-sws-drawer-active],
   [is-sws-drawer-active-2],
   [is-sws-drawer-active-3],
-  [is-sws-drawer-active-5] {
+  [is-sws-drawer-active-5],
+  [is-sws-drawer-active-6] {
     overflow: hidden;
   }
   [is-sws-drawer-active] body,
   [is-sws-drawer-active-2] body,
   [is-sws-drawer-active-3] body,
-  [is-sws-drawer-active-5] body {
+  [is-sws-drawer-active-5] body,
+  [is-sws-drawer-active-6] body {
     position: fixed;
   }
 }
@@ -26,7 +28,8 @@
   [is-sws-drawer-active] body,
   [is-sws-drawer-active-2] body,
   [is-sws-drawer-active-3] body,
-  [is-sws-drawer-active-5] body {
+  [is-sws-drawer-active-5] body,
+  [is-sws-drawer-active-6] body {
     touch-action: none;
     -webkit-overflow-scrolling: none;
     overflow: hidden;
@@ -85,6 +88,14 @@ h2 {
 .drawer-5-toggle {
   display: none;
 }
+.drawer-6 sws-drawer {
+  --sws-drawer-width: 100%;
+  --sws-drawer-translate: translate3d(0, 0, 0);
+  --sws-drawer-animation-speed: 1s;
+  --sws-drawer-transition-hide: visibility 0s linear var(--sws-drawer-animation-speed),
+    opacity var(--sws-drawer-animation-speed);
+  --sws-drawer-transition-show: visibility 0s, opacity var(--sws-drawer-animation-speed);
+}
 @media screen and (max-width: 768px) {
   .drawer-5 sws-drawer {
     --sws-drawer-position: fixed;
@@ -131,6 +142,10 @@ h2 {
             Toggle 5
           </sws-drawer-toggle-button>
         </div>
+
+        <sws-drawer-toggle-button status-key="is-sws-drawer-active-6">
+          Toggle 6
+        </sws-drawer-toggle-button>
       </nav>
     </div>
   </header>
@@ -324,6 +339,48 @@ h2 {
         </p>
       </sws-drawer>
     </div>
+  </div>
+
+  <div class="drawer-6">
+    <sws-drawer status-key="is-sws-drawer-active-6">
+      <p>
+        <sws-drawer-close-button status-key="is-sws-drawer-active-6">
+          Close 6
+        </sws-drawer-close-button>
+      </p>
+      <p>
+        <sws-drawer-close-button status-key="is-sws-drawer-active-6">
+          <a href="#section1">Section 1</a>
+        </sws-drawer-close-button>
+      </p>
+      <p>
+        <sws-drawer-close-button status-key="is-sws-drawer-active-6">
+          <a href="#section2">Section 2</a>
+        </sws-drawer-close-button>
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </sws-drawer>
+
   </div>
 
 </body>
