@@ -48,6 +48,7 @@ class SwsDrawer extends LitElement {
       --sws-drawer-z-index: 1000;
       --sws-drawer-width: 80%;
       --sws-drawer-visibility: hidden;
+      --sws-drawer-opacity: 0;
       --sws-drawer-main-position: absolute;
       --sws-drawer-main-top: 0;
       --sws-drawer-main-bottom: 0;
@@ -63,6 +64,9 @@ class SwsDrawer extends LitElement {
       --sws-drawer-layer-backdrop-filter: blur(5px);
       --sws-drawer-animation-speed: 0.3s;
       --sws-drawer-translate: translate3d(100%, 0, 0);
+      --sws-drawer-transition-hide: visibility 0s linear var(--sws-drawer-animation-speed),
+        opacity 0s linear var(--sws-drawer-animation-speed);
+      --sws-drawer-transition-show: visibility 0s, opacity 0s;
     }
 
     .drawer {
@@ -74,13 +78,14 @@ class SwsDrawer extends LitElement {
       z-index: var(--sws-drawer-z-index);
       color: var(--sws-drawer-layer-color);
       visibility: var(--sws-drawer-visibility);
-      transition: visibility 0s linear var(--sws-drawer-animation-speed);
+      opacity: var(--sws-drawer-opacity);
+      transition: var(--sws-drawer-transition-hide);
     }
 
     .drawer[is-active='true'] {
       visibility: visible;
       opacity: 1;
-      transition: visibility 0s;
+      transition: var(--sws-drawer-transition-show);
     }
 
     .drawer__layer {
