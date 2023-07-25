@@ -39,6 +39,7 @@ sws-drawer {
   --sws-drawer-z-index: 1000;
   --sws-drawer-width: 80%;
   --sws-drawer-visibility: hidden;
+  --sws-drawer-opacity: 0;
   --sws-drawer-main-position: absolute;
   --sws-drawer-main-top: 0;
   --sws-drawer-main-bottom: 0;
@@ -54,6 +55,9 @@ sws-drawer {
   --sws-drawer-layer-backdrop-filter: blur(5px);
   --sws-drawer-animation-speed: 0.3s;
   --sws-drawer-translate: translate3d(100%, 0, 0);
+  --sws-drawer-transition-hide: visibility 0s linear var(--sws-drawer-animation-speed),
+    opacity 0s linear var(--sws-drawer-animation-speed);
+  --sws-drawer-transition-show: visibility 0s, opacity 0s;
 }
 
 sws-drawer-toggle-button {
@@ -100,6 +104,7 @@ sws-drawer-close-button {
 | `--sws-drawer-z-index`                  | Position z-index property                    | `1000`                                 |
 | `--sws-drawer-width`                    | Width property                               | `80%`                                  |
 | `--sws-drawer-visibility`               | Visibility property                          | `hidden`                               |
+| `--sws-drawer-opacity`                  | Opacity property                             | `0`                                    |
 | `--sws-drawer-position`                 | Position property                            | `absolute`                             |
 | `--sws-drawer-main-top`                 | Content element position top property        | `0`                                    |
 | `--sws-drawer-main-bottom`              | Content element position bottom property     | `0`                                    |
@@ -115,6 +120,8 @@ sws-drawer-close-button {
 | `--sws-drawer-layer-backdrop-filter`    | Background layer blur size property          | `blur(5px)`                            |
 | `--sws-drawer-animation-speed`          | Animation speed property                     | `0.3s`                                 |
 | `--sws-drawer-translate`                | Drawer initial translated property           | `translate3d(100%, 0, 0)`              |
+| `--sws-drawer-transition-hide`          | Hide transition property                     | `visibility 0s linear var(--sws-drawer-animation-speed), opacity 0s linear var(--sws-drawer-animation-speed)` |
+| `--sws-drawer-transition-show`          | Show transition property                     | `visibility 0s, opacity 0s`            |
 
 ### sws-drawer-toggle-button
 
