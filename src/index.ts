@@ -343,7 +343,7 @@ class SwsDrawerCloseButton extends LitElement {
     `;
   }
 
-  private _onClick(e: MouseEvent): void {
+  private _onClick(_e: MouseEvent): void {
     const elRoot = document.documentElement;
     if (elRoot.hasAttribute(this.statusKey)) {
       if (!IS_SUPPORTS_OVERSCROLL_BEHAVIOR) {
