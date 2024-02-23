@@ -267,12 +267,6 @@ class SwsDrawerToggleButton extends LitElement {
   @property({ type: Array, attribute: 'group-keys' })
   groupKeys = [];
 
-  private elDrawerToggleButton: HTMLButtonElement | null | undefined;
-
-  constructor() {
-    super();
-  }
-
   render() {
     return html`
       <button class="drawer-toggle-button" @click="${this._onClick}" tabindex="${this.xTabindex}">
@@ -341,23 +335,12 @@ class SwsDrawerCloseButton extends LitElement {
   @property({ type: Number, attribute: 'x-tabindex' })
   xTabindex = 0;
 
-  private elDrawerCloseButton: HTMLButtonElement | null | undefined;
-
-  constructor() {
-    super();
-  }
-
   render() {
     return html`
       <button class="drawer-close-button" @click="${this._onClick}" tabindex="${this.xTabindex}" />
         <slot />
       </button>
     `;
-  }
-
-  firstUpdated() {
-    this.elDrawerCloseButton =
-      this.shadowRoot?.querySelector<HTMLButtonElement>('.drawer-close-button');
   }
 
   private _onClick(e: MouseEvent): void {
