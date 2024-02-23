@@ -72,6 +72,7 @@ sws-drawer-toggle-button {
   --sws-drawer-toggle-button-border: 0 none;
   --sws-drawer-toggle-button-font-size: inherit;
   --sws-drawer-toggle-button-font-family: inherit;
+  --sws-drawer-toggle-button-cursor: inherit;
 }
 
 sws-drawer-close-button {
@@ -86,6 +87,7 @@ sws-drawer-close-button {
   --sws-drawer-close-button-border: 0 none;
   --sws-drawer-close-button-font-size: inherit;
   --sws-drawer-close-button-font-family: inherit;
+  --sws-drawer-close-button-cursor: inherit;
 }
 ```
 
@@ -138,6 +140,7 @@ sws-drawer-close-button {
 | `--sws-drawer-toggle-button-border`      | Button element border property         | `0 none`       |
 | `--sws-drawer-toggle-button-font-size`   | Button element font-size property      | `inherit`      |
 | `--sws-drawer-toggle-button-font-family` | Button element font-family property    | `inherit`      |
+| `--sws-drawer-toggle-button-cursor`      | Button element cursor property         | `inherit`      |
 
 ### sws-drawer-close-button
 
@@ -154,6 +157,7 @@ sws-drawer-close-button {
 | `--sws-drawer-close-button-border`      | Button element border property         | `0 none`       |
 | `--sws-drawer-close-button-font-size`   | Button element font-size property      | `inherit`      |
 | `--sws-drawer-close-button-font-family` | Button element font-family property    | `inherit`      |
+| `--sws-drawer-close-button-cursor`      | Button element cursor property         | `inherit`      |
 
 
 ## Options

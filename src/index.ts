@@ -237,6 +237,7 @@ class SwsDrawerToggleButton extends LitElement {
       --sws-drawer-toggle-button-border: 0 none;
       --sws-drawer-toggle-button-font-size: inherit;
       --sws-drawer-toggle-button-font-family: inherit;
+      --sws-drawer-toggle-button-cursor: inherit;
     }
 
     .drawer-toggle-button {
@@ -251,6 +252,7 @@ class SwsDrawerToggleButton extends LitElement {
       border: var(--sws-drawer-toggle-button-border);
       font-size: var(--sws-drawer-toggle-button-font-size);
       font-family: var(--sws-drawer-toggle-button-font-family);
+      cursor: var(--sws-drawer-toggle-button-cursor);
     }
   `;
 
@@ -317,6 +319,7 @@ class SwsDrawerCloseButton extends LitElement {
       --sws-drawer-close-button-border: 0 none;
       --sws-drawer-close-button-font-size: inherit;
       --sws-drawer-close-button-font-family: inherit;
+      --sws-drawer-close-button-cursor: inherit;
     }
 
     .drawer-close-button {
@@ -331,6 +334,7 @@ class SwsDrawerCloseButton extends LitElement {
       border: var(--sws-drawer-close-button-border);
       font-size: var(--sws-drawer-close-button-font-size);
       font-family: var(--sws-drawer-close-button-font-family);
+      cursor: var(--sws-drawer-close-button-cursor);
     }
   `;
 
