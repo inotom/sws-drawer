@@ -7,7 +7,7 @@ const DEFAULT_STATUS_KEY = 'is-sws-drawer-active';
 
 const IS_SUPPORTS_OVERSCROLL_BEHAVIOR = (() => CSS.supports('overscroll-behavior', 'none'))();
 
-const stopBodyScrolling = (e) => {
+const stopBodyScrolling = (e: Event) => {
   e.preventDefault();
 };
 
@@ -18,7 +18,7 @@ const fixBodyTop = (key: string): void => {
   if (key === '') {
     return;
   }
-  const top = `${window.pageYOffset}`;
+  const top = `${window.scrollY}`;
   document.documentElement.setAttribute(key, top);
   document.body.style.top = -top + 'px';
 };
@@ -215,8 +215,7 @@ class SwsDrawer extends LitElement {
   }
 
   private _escapeKeyUp(e: KeyboardEvent): void {
-    const ESC_KEY = 27;
-    if (e.keyCode === ESC_KEY) {
+    if (e.code.toUpperCase() === 'ESCAPE') {
       this._close();
     }
   }
@@ -282,12 +281,7 @@ class SwsDrawerToggleButton extends LitElement {
     `;
   }
 
-  firstUpdated() {
-    this.elDrawerToggleButton =
-      this.shadowRoot?.querySelector<HTMLButtonElement>('.drawer-toggle-button');
-  }
-
-  private _onClick(e: MouseEvent): void {
+  private _onClick(_e: MouseEvent): void {
     const elRoot = document.documentElement;
     if (elRoot.hasAttribute(this.statusKey)) {
       elRoot.removeAttribute(this.statusKey);
