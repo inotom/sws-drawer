@@ -7,7 +7,7 @@ const DEFAULT_STATUS_KEY = 'is-sws-drawer-active';
 
 const IS_SUPPORTS_OVERSCROLL_BEHAVIOR = (() => CSS.supports('overscroll-behavior', 'none'))();
 
-const stopBodyScrolling = (e) => {
+const stopBodyScrolling = (e: Event) => {
   e.preventDefault();
 };
 
@@ -18,7 +18,7 @@ const fixBodyTop = (key: string): void => {
   if (key === '') {
     return;
   }
-  const top = `${window.pageYOffset}`;
+  const top = `${window.scrollY}`;
   document.documentElement.setAttribute(key, top);
   document.body.style.top = -top + 'px';
 };
@@ -215,8 +215,7 @@ class SwsDrawer extends LitElement {
   }
 
   private _escapeKeyUp(e: KeyboardEvent): void {
-    const ESC_KEY = 27;
-    if (e.keyCode === ESC_KEY) {
+    if (e.code.toUpperCase() === 'ESCAPE') {
       this._close();
     }
   }
@@ -229,6 +228,7 @@ class SwsDrawerToggleButton extends LitElement {
       --sws-drawer-toggle-button-display: inline-block;
       --sws-drawer-toggle-button-appearance: none;
       --sws-drawer-toggle-button-width: auto;
+      --sws-drawer-toggle-button-height: initial;
       --sws-drawer-toggle-button-margin: 0;
       --sws-drawer-toggle-button-padding: 0;
       --sws-drawer-toggle-button-color: currentColor;
@@ -237,12 +237,14 @@ class SwsDrawerToggleButton extends LitElement {
       --sws-drawer-toggle-button-border: 0 none;
       --sws-drawer-toggle-button-font-size: inherit;
       --sws-drawer-toggle-button-font-family: inherit;
+      --sws-drawer-toggle-button-cursor: inherit;
     }
 
     .drawer-toggle-button {
       appearance: var(--sws-drawer-toggle-button-appearance);
       display: var(--sws-drawer-toggle-button-display);
       width: var(--sws-drawer-toggle-button-width);
+      height: var(--sws-drawer-toggle-button-height);
       margin: var(--sws-drawer-toggle-button-margin);
       padding: var(--sws-drawer-toggle-button-padding);
       color: var(--sws-drawer-toggle-button-color);
@@ -251,6 +253,7 @@ class SwsDrawerToggleButton extends LitElement {
       border: var(--sws-drawer-toggle-button-border);
       font-size: var(--sws-drawer-toggle-button-font-size);
       font-family: var(--sws-drawer-toggle-button-font-family);
+      cursor: var(--sws-drawer-toggle-button-cursor);
     }
   `;
 
@@ -266,12 +269,6 @@ class SwsDrawerToggleButton extends LitElement {
   @property({ type: Array, attribute: 'group-keys' })
   groupKeys = [];
 
-  private elDrawerToggleButton: HTMLButtonElement | null | undefined;
-
-  constructor() {
-    super();
-  }
-
   render() {
     return html`
       <button class="drawer-toggle-button" @click="${this._onClick}" tabindex="${this.xTabindex}">
@@ -280,12 +277,7 @@ class SwsDrawerToggleButton extends LitElement {
     `;
   }
 
-  firstUpdated() {
-    this.elDrawerToggleButton =
-      this.shadowRoot?.querySelector<HTMLButtonElement>('.drawer-toggle-button');
-  }
-
-  private _onClick(e: MouseEvent): void {
+  private _onClick(_e: MouseEvent): void {
     const elRoot = document.documentElement;
     if (elRoot.hasAttribute(this.statusKey)) {
       elRoot.removeAttribute(this.statusKey);
@@ -309,6 +301,7 @@ class SwsDrawerCloseButton extends LitElement {
       --sws-drawer-close-button-display: inline-block;
       --sws-drawer-close-button-appearance: none;
       --sws-drawer-close-button-width: auto;
+      --sws-drawer-close-button-height: initial;
       --sws-drawer-close-button-margin: 0;
       --sws-drawer-close-button-padding: 0;
       --sws-drawer-close-button-color: currentColor;
@@ -317,12 +310,14 @@ class SwsDrawerCloseButton extends LitElement {
       --sws-drawer-close-button-border: 0 none;
       --sws-drawer-close-button-font-size: inherit;
       --sws-drawer-close-button-font-family: inherit;
+      --sws-drawer-close-button-cursor: inherit;
     }
 
     .drawer-close-button {
       appearance: var(--sws-drawer-close-button-appearance);
       display: var(--sws-drawer-close-button-display);
       width: var(--sws-drawer-close-button-width);
+      height: var(--sws-drawer-close-button-height);
       margin: var(--sws-drawer-close-button-margin);
       padding: var(--sws-drawer-close-button-padding);
       color: var(--sws-drawer-close-button-color);
@@ -331,6 +326,7 @@ class SwsDrawerCloseButton extends LitElement {
       border: var(--sws-drawer-close-button-border);
       font-size: var(--sws-drawer-close-button-font-size);
       font-family: var(--sws-drawer-close-button-font-family);
+      cursor: var(--sws-drawer-close-button-cursor);
     }
   `;
 
@@ -343,12 +339,6 @@ class SwsDrawerCloseButton extends LitElement {
   @property({ type: Number, attribute: 'x-tabindex' })
   xTabindex = 0;
 
-  private elDrawerCloseButton: HTMLButtonElement | null | undefined;
-
-  constructor() {
-    super();
-  }
-
   render() {
     return html`
       <button class="drawer-close-button" @click="${this._onClick}" tabindex="${this.xTabindex}" />
@@ -357,12 +347,7 @@ class SwsDrawerCloseButton extends LitElement {
     `;
   }
 
-  firstUpdated() {
-    this.elDrawerCloseButton =
-      this.shadowRoot?.querySelector<HTMLButtonElement>('.drawer-close-button');
-  }
-
-  private _onClick(e: MouseEvent): void {
+  private _onClick(_e: MouseEvent): void {
     const elRoot = document.documentElement;
     if (elRoot.hasAttribute(this.statusKey)) {
       if (!IS_SUPPORTS_OVERSCROLL_BEHAVIOR) {

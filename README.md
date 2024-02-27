@@ -64,6 +64,7 @@ sws-drawer-toggle-button {
   --sws-drawer-toggle-button-display: inline-block;
   --sws-drawer-toggle-button-appearance: none;
   --sws-drawer-toggle-button-width: auto;
+  --sws-drawer-toggle-button-height: initial;
   --sws-drawer-toggle-button-margin: 0;
   --sws-drawer-toggle-button-padding: 0;
   --sws-drawer-toggle-button-color: currentColor;
@@ -72,12 +73,14 @@ sws-drawer-toggle-button {
   --sws-drawer-toggle-button-border: 0 none;
   --sws-drawer-toggle-button-font-size: inherit;
   --sws-drawer-toggle-button-font-family: inherit;
+  --sws-drawer-toggle-button-cursor: inherit;
 }
 
 sws-drawer-close-button {
   --sws-drawer-close-button-display: inline-block;
   --sws-drawer-close-button-appearance: none;
   --sws-drawer-close-button-width: auto;
+  --sws-drawer-close-button-height: initial;
   --sws-drawer-close-button-margin: 0;
   --sws-drawer-close-button-padding: 0;
   --sws-drawer-close-button-color: currentColor;
@@ -86,6 +89,7 @@ sws-drawer-close-button {
   --sws-drawer-close-button-border: 0 none;
   --sws-drawer-close-button-font-size: inherit;
   --sws-drawer-close-button-font-family: inherit;
+  --sws-drawer-close-button-cursor: inherit;
 }
 ```
 
@@ -130,6 +134,7 @@ sws-drawer-close-button {
 | `--sws-drawer-toggle-button-display`     | Button element display property        | `inline-block` |
 | `--sws-drawer-toggle-button-appearance`  | Button element appearance property     | `none`         |
 | `--sws-drawer-toggle-button-width`       | Button element width property          | `auto`         |
+| `--sws-drawer-toggle-button-height`      | Button element height property         | `initial`      |
 | `--sws-drawer-toggle-button-margin`      | Button element margin property         | `0`            |
 | `--sws-drawer-toggle-button-padding`     | Button element padding property        | `0`            |
 | `--sws-drawer-toggle-button-color`       | Button element color property          | `currentColor` |
@@ -138,6 +143,7 @@ sws-drawer-close-button {
 | `--sws-drawer-toggle-button-border`      | Button element border property         | `0 none`       |
 | `--sws-drawer-toggle-button-font-size`   | Button element font-size property      | `inherit`      |
 | `--sws-drawer-toggle-button-font-family` | Button element font-family property    | `inherit`      |
+| `--sws-drawer-toggle-button-cursor`      | Button element cursor property         | `inherit`      |
 
 ### sws-drawer-close-button
 
@@ -146,6 +152,7 @@ sws-drawer-close-button {
 | `--sws-drawer-close-button-display`     | Button element display property        | `inline-block` |
 | `--sws-drawer-close-button-appearance`  | Button element appearance property     | `none`         |
 | `--sws-drawer-close-button-width`       | Button element width property          | `auto`         |
+| `--sws-drawer-close-button-height`      | Button element height property         | `initial`      |
 | `--sws-drawer-close-button-margin`      | Button element margin property         | `0`            |
 | `--sws-drawer-close-button-padding`     | Button element padding property        | `0`            |
 | `--sws-drawer-close-button-color`       | Button element color property          | `currentColor` |
@@ -154,6 +161,7 @@ sws-drawer-close-button {
 | `--sws-drawer-close-button-border`      | Button element border property         | `0 none`       |
 | `--sws-drawer-close-button-font-size`   | Button element font-size property      | `inherit`      |
 | `--sws-drawer-close-button-font-family` | Button element font-family property    | `inherit`      |
+| `--sws-drawer-close-button-cursor`      | Button element cursor property         | `inherit`      |
 
 
 ## Options
