@@ -215,7 +215,7 @@ class SwsDrawer extends LitElement {
   }
 
   private _escapeKeyUp(e: KeyboardEvent): void {
-    if (e.code.toUpperCase() === 'ESCAPE') {
+    if (e.code?.toUpperCase() === 'ESCAPE') {
       this._close();
     }
   }
