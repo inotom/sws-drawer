@@ -1,6 +1,6 @@
 {
   "name": "@inotom/sws-drawer",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "A web Components to add drawer element.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
