@@ -95,6 +95,7 @@ class SwsDrawer extends LitElement {
       bottom: 0;
       left: 0;
       background: var(--sws-drawer-layer-background);
+      -webkit-backdrop-filter: var(--sws-drawer-layer-backdrop-filter);
       backdrop-filter: var(--sws-drawer-layer-backdrop-filter);
       opacity: 0;
       transition: opacity var(--sws-drawer-animation-speed);
